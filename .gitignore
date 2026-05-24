@@ -1,0 +1,10 @@
+cache/
+out/
+lib/
+web/node_modules/
+web/dist/
+broadcast/
+cache_forge/
+.env
+*.swp
+.DS_Store
