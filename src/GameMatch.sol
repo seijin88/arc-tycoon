@@ -4,7 +4,6 @@ pragma solidity ^0.8.24;
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-import {CosmeticChips} from "./CosmeticChips.sol";
 import {CosmeticRegistry} from "./CosmeticRegistry.sol";
 
 /// @title GameMatch — trustless one-shot match (max 4 players, 30 min) with richest-first bet (Option A).
@@ -26,7 +25,7 @@ contract GameMatch is ReentrancyGuard {
     uint8 public constant BOARD_SIZE = 16;
     uint8 public constant PROPERTY_COUNT = 8;
 
-    CosmeticChips public immutable chips;
+    IERC20 public immutable chips;
     CosmeticRegistry public immutable registry;
     address public immutable treasury;
     address public immutable host;
@@ -97,7 +96,7 @@ contract GameMatch is ReentrancyGuard {
         address host_
     ) {
         if (stakeAmount_ == 0) revert InvalidStake();
-        chips = CosmeticChips(chips_);
+        chips = IERC20(chips_);
         registry = CosmeticRegistry(registry_);
         treasury = treasury_;
         feeBps = feeBps_;
