@@ -39,7 +39,6 @@ Trustless, Monopoly-style board matches on **Arc Testnet** with transferable **C
 Install [Foundry](https://book.getfoundry.sh/getting-started/installation), then:
 
 ```bash
-cd C:\Users\DELL\Projects\arc-tycoon
 forge install OpenZeppelin/openzeppelin-contracts --no-commit
 forge install foundry-rs/forge-std --no-commit
 cp .env.example .env
