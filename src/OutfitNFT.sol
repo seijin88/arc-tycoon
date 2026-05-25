@@ -15,6 +15,15 @@ contract OutfitNFT is ERC721, AccessControl {
         _grantRole(MINTER_ROLE, admin);
     }
 
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, AccessControl)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+
     function mint(address to) external onlyRole(MINTER_ROLE) returns (uint256 tokenId) {
         tokenId = _nextTokenId++;
         _safeMint(to, tokenId);

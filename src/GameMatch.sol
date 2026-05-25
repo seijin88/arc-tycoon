@@ -75,7 +75,6 @@ contract GameMatch is ReentrancyGuard {
     error PropertyOwned();
     error NotPropertyOwner();
     error InsufficientCash();
-    error MatchEnded();
     error ActionTimeoutNotReached();
 
     event PlayerJoined(address indexed player, uint8 index, uint16 luckBps);

@@ -3,6 +3,7 @@ out/
 lib/
 web/node_modules/
 web/dist/
+web/tsconfig.tsbuildinfo
 broadcast/
 cache_forge/
 .env
